@@ -27,6 +27,32 @@
         <p id="credits-value">0</p>
       </div>
     </section>
+    <section class="course-form">
+      <h2>Add Course</h2>
+      <form id="course-form">
+        <label for="course-code">Course Code</label>
+        <input type="text" id="course-code" placeholder="e.g. ICS 401" required>
+
+        <label for="credit-hours">Credit Hours</label>
+        <input type="number" id="credit-hours" placeholder="e.g. 3" min="1" max="6" required>
+
+        <label for="letter-grade">Letter Grade</label>
+        <select id="letter-grade" required>
+          <option value="">Select grade</option>
+          <option value="A">A</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B">B</option>
+          <option value="B-">B-</option>
+          <option value="C+">C+</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+        </select>
+
+        <button type="submit">Add Course</button>
+      </form>
+    </section>
     </main>
 
     script src="js/script.js"></script>
