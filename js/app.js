@@ -1,5 +1,16 @@
 // Academic Tracker — main app logic
-const courses = [];
+let courses = loadCourses();
+
+const STORAGE_KEY = "academic-tracker-courses";
+
+function saveCourses() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(courses));
+}
+
+function loadCourses() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
 
 const gradePoints = {
   "A": 4.0, "A-": 3.7,
@@ -56,10 +67,19 @@ document.getElementById("course-form").addEventListener("submit", function (e) {
   const grade = document.getElementById("letter-grade").value;
 
   courses.push({ code, credits, grade });
+    saveCourses();
 
   renderTable();
   renderSummary();
 
   e.target.reset();
+  });
+
+  document.getElementById("clear-courses").addEventListener("click", function () {
+  courses = [];
+  saveCourses();
+  renderTable();
+  renderSummary();
 });
+
 
