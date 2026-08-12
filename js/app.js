@@ -73,6 +73,13 @@ document.getElementById("course-form").addEventListener("submit", function (e) {
   renderSummary();
 
   e.target.reset();
+  });
+
+  document.getElementById("clear-courses").addEventListener("click", function () {
+  courses = [];
+  saveCourses();
+  renderTable();
+  renderSummary();
 });
 
 
