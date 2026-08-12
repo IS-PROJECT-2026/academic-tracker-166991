@@ -27,3 +27,39 @@ function calculateGPA(courseList) {
 function calculateTotalCredits(courseList) {
   return courseList.reduce((sum, course) => sum + course.credits, 0);
 }
+
+function renderTable() {
+  const tbody = document.getElementById("course-table-body");
+  tbody.innerHTML = "";
+
+  courses.forEach(course => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${course.code}</td>
+      <td>${course.credits}</td>
+      <td>${course.grade}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+function renderSummary() {
+  document.getElementById("gpa-value").textContent = calculateGPA(courses);
+  document.getElementById("credits-value").textContent = calculateTotalCredits(courses);
+}
+
+document.getElementById("course-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const code = document.getElementById("course-code").value;
+  const credits = parseInt(document.getElementById("credit-hours").value);
+  const grade = document.getElementById("letter-grade").value;
+
+  courses.push({ code, credits, grade });
+
+  renderTable();
+  renderSummary();
+
+  e.target.reset();
+});
+
