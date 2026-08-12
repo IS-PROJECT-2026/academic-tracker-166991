@@ -1,5 +1,5 @@
 // Academic Tracker — main app logic
-const courses = [];
+let courses = loadCourses();
 
 const STORAGE_KEY = "academic-tracker-courses";
 
@@ -67,10 +67,12 @@ document.getElementById("course-form").addEventListener("submit", function (e) {
   const grade = document.getElementById("letter-grade").value;
 
   courses.push({ code, credits, grade });
+    saveCourses();
 
   renderTable();
   renderSummary();
 
   e.target.reset();
 });
+
 
