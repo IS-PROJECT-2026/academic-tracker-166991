@@ -1,6 +1,17 @@
 // Academic Tracker — main app logic
 const courses = [];
 
+const STORAGE_KEY = "academic-tracker-courses";
+
+function saveCourses() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(courses));
+}
+
+function loadCourses() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored ? JSON.parse(stored) : [];
+}
+
 const gradePoints = {
   "A": 4.0, "A-": 3.7,
   "B+": 3.3, "B": 3.0, "B-": 2.7,
