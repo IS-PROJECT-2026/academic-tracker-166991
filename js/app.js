@@ -1,5 +1,4 @@
 // Academic Tracker — main app logic
-let courses = loadCourses();
 
 const STORAGE_KEY = "academic-tracker-courses";
 
@@ -11,6 +10,8 @@ function loadCourses() {
   const stored = localStorage.getItem(STORAGE_KEY);
   return stored ? JSON.parse(stored) : [];
 }
+
+let courses = loadCourses();
 
 const gradePoints = {
   "A": 4.0, "A-": 3.7,
@@ -59,6 +60,44 @@ function renderSummary() {
   document.getElementById("credits-value").textContent = calculateTotalCredits(courses);
 }
 
+let gradeChart = null;
+
+function renderChart() {
+  const gradeCounts = {};
+  courses.forEach(course => {
+    gradeCounts[course.grade] = (gradeCounts[course.grade] || 0) + 1;
+  });
+
+  const labels = Object.keys(gradeCounts);
+  const data = Object.values(gradeCounts);
+
+  if (gradeChart) {
+    gradeChart.destroy();
+  }
+
+  const ctx = document.getElementById("grade-chart");
+  gradeChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Number of Courses",
+        data: data,
+        backgroundColor: "#2f3542"
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { stepSize: 1 }
+        }
+      }
+    }
+  });
+}
+
 document.getElementById("course-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -71,6 +110,7 @@ document.getElementById("course-form").addEventListener("submit", function (e) {
 
   renderTable();
   renderSummary();
+  renderChart();
 
   e.target.reset();
   });
@@ -80,6 +120,7 @@ document.getElementById("course-form").addEventListener("submit", function (e) {
   saveCourses();
   renderTable();
   renderSummary();
+  renderChart();
 });
 
 
