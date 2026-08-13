@@ -10,6 +10,11 @@ body {
   color: #2f3542;
 }
 
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .navbar {
   background-color: #2f3542;
   color: white;
