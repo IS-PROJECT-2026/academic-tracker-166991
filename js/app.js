@@ -1,4 +1,4 @@
-// Academic Tracker — main app logic
+// Academic Tracker — main app logic Version B
 const STORAGE_KEY = "academic-tracker-courses";
 
 function saveCourses() {
