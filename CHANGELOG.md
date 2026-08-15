@@ -2,10 +2,7 @@
 
 Set up project skeleton and core UI
 Built course entry form
-
-
-# Changelog
-
 Implemented GPA calculation engine
 Added localStorage persistence
+Added mobile responsiveness
 
