@@ -73,11 +73,10 @@ Demonstrate your workflow mechanics by embedding your screenshots below.
 * **Caption:** Full local and remote branch list showing conventional, issue-linked naming across `feat/`, `fix/`, `refactor/`, and `docs/` prefixes for every issue worked on (#1–#8), including bugfix branches created for the localStorage debugging.
 
 ### D. Pull Requests & Traceability
-*Provide a screenshot of a completed or open Pull Request (PR) on GitHub that clearly shows it is linked to a related development issue.*
 
-[PASTE YOUR PULL REQUEST SCREENSHOT DIRECTLY HERE]
+<img width="1892" height="947" alt="image" src="https://github.com/user-attachments/assets/a9258f20-6a9f-4ff7-a163-8662c10ea5d7" />
 
-* **Caption:** [Write a brief sentence describing your PR and what issue it closes]
+* **Caption:** Implements the weighted GPA calculation engine, adds course table markup, and wires form submissions to dynamically update the dashboard table and summary display.
 
 ---
 
