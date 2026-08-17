@@ -54,28 +54,23 @@ If you had to restart this project from scratch with everything you know now, na
 
 Demonstrate your workflow mechanics by embedding your screenshots below.
 
-> **CRITICAL FOR WORKING IMAGES:** Do not type manual folder paths. Edit this file directly on the GitHub web interface, click on the blank line below each prompt, and **paste (Ctrl+V / Cmd+V)** your screenshot. GitHub will automatically upload the file and generate a permanent, working image link for you.
-
 ### A. Milestones and Issues
-*Provide a screenshot showing your active milestone(s) and the granular tracking issues linked directly to them.*
 
-[PASTE YOUR MILESTONE SCREENSHOT DIRECTLY HERE]
+<img width="912" height="496" alt="image" src="https://github.com/user-attachments/assets/c7c8b0d9-173f-432a-bc99-738261680e96" />
 
-* **Caption:** [Write a brief sentence describing your milestones here]
+* **Caption:** Three milestones — Setup & Core UI, Feature Build, and Polish & Deploy — with 7/8 tracking issues linked and closed.
 
 ### B. Project Board
-*Provide a screenshot of your GitHub Project Board with your issues organized dynamically across columns (To Do, In Progress, Done).*
 
-[PASTE YOUR PROJECT BOARD SCREENSHOT DIRECTLY HERE]
+<img width="1919" height="854" alt="image" src="https://github.com/user-attachments/assets/d85c4ec7-af0b-4045-901e-8ab311ed74c4" />
 
-* **Caption:** [Write a brief sentence describing your board state here]
+* **Caption:**  Kanban board showing 7/8 issues moved through To Do, In Progress, and Done with one still In Progress.
 
 ### C. Branching Architecture
-*Provide a screenshot showing your local or remote Git branch list, highlighting your use of conventional, issue-linked naming patterns (e.g., `feat/`, `fix/`, `style/`).*
 
-[PASTE YOUR BRANCHING SCREENSHOT DIRECTLY HERE]
+<img width="772" height="632" alt="image" src="https://github.com/user-attachments/assets/c393946b-0b80-4d54-92f5-80f3c8a88e08" />
 
-* **Caption:** [Write a brief sentence describing your branch list here]
+* **Caption:** Full local and remote branch list showing conventional, issue-linked naming across `feat/`, `fix/`, `refactor/`, and `docs/` prefixes for every issue worked on (#1–#8), including bugfix branches created for the localStorage debugging.
 
 ### D. Pull Requests & Traceability
 *Provide a screenshot of a completed or open Pull Request (PR) on GitHub that clearly shows it is linked to a related development issue.*
@@ -96,64 +91,53 @@ You must engineer **three merge conflicts**, each triggered by a **different cau
 
 ### Conflict 1 — Full Chronology
 
-**What cause did you use?** [Name the type of conflict cause from the lecture]
+**What cause did you use?** Same-line content conflict
 
 #### Step 1: Generating the Clash
 *Screenshot showing the merge attempt and the conflict warning.*
 
-[PASTE SCREENSHOT OF ATTEMPTED MERGE / TERMINAL WARNING HERE]
+<img width="519" height="149" alt="image" src="https://github.com/user-attachments/assets/113e4f31-452d-48e3-a910-966abc02978f" />
 
-* **Caption:** [Describe which two branches collided and the warning received]
+
+* **Caption:** branch-A and branch-B collided. Merging branch-B into main (after branch-A was already merged) triggered the warning: "CONFLICT (content): Merge conflict in js/app.js — Automatic merge failed; fix conflicts and then commit the result."
 
 #### Step 2: Inside the Code Editor (Conflict Markers)
 *Screenshot showing the raw, unresolved conflict markers (`<<<<<<< HEAD`, `=======`, `>>>>>>>`) in your editor.*
 
-[PASTE SCREENSHOT OF RAW CONFLICT MARKERS HERE]
+<img width="1188" height="361" alt="image" src="https://github.com/user-attachments/assets/c28eacde-2279-465c-b69e-7bc0a659e1f7" />
 
-* **Caption:** [Explain what caused the dispute and your reasoning for the final version]
+
+* **Caption:** the conflict was due to both modifying the same line in js/app.js. Chose the one that was cleanest.
 
 #### Step 3: Resolution & Clean Merge
 *Screenshot of your clean Git history or completed PR showing the conflict was resolved and merged.*
 
-[PASTE SCREENSHOT OF CLEAN RESOLUTION HERE]
+<img width="1414" height="607" alt="image" src="https://github.com/user-attachments/assets/2dc5e0c5-3792-412c-aa44-30d6bfb6e07b" />
 
-* **Caption:** [Describe the final state after resolution]
+
+* **Caption:** the conflicting "Version AAA" comment line was removed and replaced with a single clean header comment
 
 ---
 
 ### Conflict 2 — Different Cause
 
-**What cause did you use?** [Name the type of conflict cause — must be different from Conflict 1]
+**What cause did you use?** Add-Add conflict
 
-**Why does this cause trigger a conflict?** [1–2 sentences explaining the mechanism]
+**Why does this cause trigger a conflict?** Two different branches(branch-C and branch-D) both independently created CHANGELOG.md with different content.
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 2 HERE]
+<img width="951" height="488" alt="add conflict" src="https://github.com/user-attachments/assets/12ac1a07-a1e8-4757-8c64-27e1314d0329" />
 
-* **Caption:** [Brief description of the conflicting branches and file]
+* **Caption:** branch-C and branch-D both independently created CHANGELOG.md with different content
 
 ---
 
 ### Conflict 3 — Different Cause
 
-**What cause did you use?** [Name the type of conflict cause — must be different from Conflicts 1 and 2]
+**What cause did you use?** Modify-Delete Conflict
 
-**Why does this cause trigger a conflict?** [1–2 sentences explaining the mechanism]
+**Why does this cause trigger a conflict?** branch-E deleted CHANGELOG.md while branch-F modified it, triggering the conflict.
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 3 HERE]
+<img width="743" height="124" alt="modify delete" src="https://github.com/user-attachments/assets/b5f59cfe-88d0-4138-b177-7ed102d1d275" />
 
-* **Caption:** [Brief description of the conflicting branches and file]
 
----
-##
-## 6. Feedback & Evaluation
-
-To help improve this course for future engineering cohorts, please take 2 minutes to fill out the anonymous feedback form. Your honest review helps shape how this program is taught next semester!
-- [ ] **Anonymous Evaluation Form:** [Course & Instructor Evaluation](https://forms.gle/YLybnsyXXErKEg3s9)
-
----
- 
-## Final Submission
- 
-Once your repository is complete, submit your work through the official submission form below. The form will **stop accepting responses after Monday, August 17th, 2026** — no late submissions will be accepted.
- 
-> **Submission Form:** [https://forms.gle/KrT4VxtFtkU3wtYu8](https://forms.gle/KrT4VxtFtkU3wtYu8)
+* **Caption:** branch-E deleted CHANGELOG.md while branch-F modified it, triggering conflict.
